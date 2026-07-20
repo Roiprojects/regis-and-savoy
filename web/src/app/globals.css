@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/* ============================================================
+   REGIS AND SAVOY — Heritage Design System
+   ============================================================ */
+
+@theme {
+  /* Palette — warm ivory paper, heritage crimson, aged gold, ink */
+  --color-paper: #f3ebdd;
+  --color-paper-2: #faf5ea;
+  --color-paper-3: #ebe0cd;
+  --color-ink: #1a1512;
+  --color-ink-soft: #4d443b;
+  --color-muted: #8a7d6a;
+  --color-line: #d8cab2;
+  --color-line-soft: #e4d9c5;
+
+  --color-crimson: #9c1a1a;
+  --color-crimson-bright: #c8302f;
+  --color-crimson-deep: #631212;
+  --color-gold: #b28a4c;
+  --color-gold-soft: #d8b878;
+  --color-gold-bright: #e6cd94;
+
+  --color-night: #141010;
+  --color-night-2: #1f1815;
+  --color-night-3: #2a211c;
+
+  /* Typography */
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --spacing-gutter: 6vw;
+
+  /* Shadows */
+  --shadow-lift: 0 24px 60px -28px rgba(60, 20, 16, 0.35);
+}
+
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  /* Lenis owns smooth scroll (Next 16 no longer overrides scroll-behavior). */
+  background: var(--color-paper);
+}
+
+body {
+  position: relative;
+  background:
+    radial-gradient(140% 110% at 85% -10%, rgba(156, 26, 26, 0.05), transparent 55%),
+    radial-gradient(120% 90% at 0% 0%, rgba(255, 252, 245, 0.6), transparent 45%),
+    var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern", "liga", "calt";
+  overflow-x: clip;
+}
+
+/* Fine paper grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: var(--color-paper-2);
+}
+
+/* Thin heritage rule */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-line) 12%,
+    var(--color-line) 88%,
+    transparent
+  );
+}
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* Fluid display type */
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.9rem, 7.4vw, 7rem);
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.01;
+  letter-spacing: -0.012em;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+}
+.display-md {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-gold) 0%,
+    var(--color-gold-bright) 45%,
+    var(--color-gold) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 2px;
+  padding: 1rem 2.1rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  transition: all 0.5s var(--ease-out-expo);
+}
+.btn-primary {
+  background: var(--color-crimson);
+  color: var(--color-paper-2);
+  box-shadow: 0 12px 30px -14px rgba(156, 26, 26, 0.7);
+}
+.btn-primary:hover {
+  background: var(--color-crimson-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -14px rgba(200, 48, 47, 0.6);
+}
+.btn-ghost {
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+}
+.btn-ghost:hover {
+  border-color: var(--color-crimson);
+  color: var(--color-crimson);
+}
+
+/* Arrow links */
+.arrow-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 500;
+}
+.arrow-link .arrow {
+  transition: transform 0.5s var(--ease-out-expo), color 0.4s ease;
+}
+.arrow-link:hover .arrow {
+  transform: translateX(6px);
+  color: var(--color-crimson-bright);
+}
+
+/* Card lift */
+.card-lift {
+  transition: transform 0.55s var(--ease-out-expo), box-shadow 0.55s var(--ease-out-expo), background-color 0.5s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .grain {
+    display: none;
+  }
+}
