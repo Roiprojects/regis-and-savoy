@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { brand, nav, services } from "@/lib/content";

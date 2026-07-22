@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/AppLink";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { Crest, ArrowIcon } from "@/components/ui";
@@ -104,11 +105,28 @@ export default function AboutPage() {
       <section className="py-28">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
-            <div className="rounded-sm border border-line bg-paper-2 p-12 md:p-16">
-              <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-center">
-                <Crest variant="red" size={120} />
-                <div>
-                  <p className="font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-ink">
+            <div className="overflow-hidden rounded-sm border border-line bg-paper-2">
+              <div className="grid lg:grid-cols-2">
+                <div className="group relative min-h-[320px] overflow-hidden">
+                  <Image
+                    src="/images/architecture.jpg"
+                    alt="Glass corporate headquarters rising against the sky"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover saturate-[0.92] transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+                  />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 mix-blend-multiply"
+                    style={{
+                      background:
+                        "radial-gradient(120% 120% at 18% 0%, rgba(156,26,26,0.22), transparent 55%), linear-gradient(180deg, rgba(26,21,18,0.05) 0%, rgba(20,16,16,0.42) 100%)",
+                    }}
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-12 md:p-16">
+                  <Crest variant="red" size={72} />
+                  <p className="mt-8 font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-ink">
                     Corporate advisory that complements a wealth management
                     heritage — independent, discreet and enduring.
                   </p>

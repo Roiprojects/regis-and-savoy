@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { RevealWords } from "@/components/motion/Reveal";
 import { Crest, ArrowIcon } from "@/components/ui";
 import { heroLead, brand } from "@/lib/content";

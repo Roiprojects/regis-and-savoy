@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { brand, nav, services, contact } from "@/lib/content";
 import { Crest, ArrowIcon } from "@/components/ui";
 import { Reveal } from "@/components/motion/Reveal";

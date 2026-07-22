@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { services } from "@/lib/content";
 import { ArrowIcon } from "@/components/ui";
 

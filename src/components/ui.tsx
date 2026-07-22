@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -54,6 +54,52 @@ export function ArrowLink({
     <Link href={href} className={cls}>
       {inner}
     </Link>
+  );
+}
+
+export function Figure({
+  src,
+  alt,
+  ratio = "4 / 3",
+  priority,
+  className,
+  sizes = "(max-width: 1024px) 100vw, 50vw",
+}: {
+  src: string;
+  alt: string;
+  ratio?: string;
+  priority?: boolean;
+  className?: string;
+  sizes?: string;
+}) {
+  return (
+    <figure
+      className={`group relative overflow-hidden rounded-sm border border-line bg-paper-3 shadow-[var(--shadow-lift)] ${className ?? ""}`}
+      style={{ aspectRatio: ratio }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes={sizes}
+        className="object-cover saturate-[0.92] transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+      />
+      {/* Warm heritage duotone — unifies photography with the crimson/ink palette */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 mix-blend-multiply"
+        style={{
+          background:
+            "radial-gradient(120% 120% at 18% 0%, rgba(156,26,26,0.22), transparent 55%), linear-gradient(180deg, rgba(26,21,18,0.05) 0%, rgba(20,16,16,0.42) 100%)",
+        }}
+      />
+      {/* Fine inner ring for a framed, gallery feel */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-sm ring-1 ring-inset ring-[rgba(216,184,120,0.18)]"
+      />
+    </figure>
   );
 }
 

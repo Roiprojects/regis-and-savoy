@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from "@/components/AppLink";
+import Image from "next/image";
 import Hero from "@/components/sections/Hero";
 import Lifecycle from "@/components/sections/Lifecycle";
 import ServicesAccordion from "@/components/sections/ServicesAccordion";
 import Marquee from "@/components/motion/Marquee";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { Crest, ArrowIcon } from "@/components/ui";
+import { Crest, Figure, ArrowIcon } from "@/components/ui";
 import { stewardship, specialisms, brand, contact } from "@/lib/content";
 
 export default function Home() {
@@ -14,17 +15,22 @@ export default function Home() {
 
       {/* Stewardship intro */}
       <section className="relative py-32">
-        <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-[var(--spacing-gutter)] lg:grid-cols-2">
           <Reveal>
+            <Figure
+              src="/images/advisory-desk.jpg"
+              alt="Advisers reviewing corporate documents at a boardroom table"
+              ratio="5 / 4"
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
             <p className="eyebrow mb-6 text-crimson">The Firm</p>
-            <div className="flex items-center gap-4">
-              <Crest variant="red" size={64} />
+            <div className="mb-7 flex items-center gap-4">
+              <Crest variant="red" size={54} />
               <p className="font-[var(--font-display)] text-2xl italic text-crimson-deep">
                 {brand.tagline}
               </p>
             </div>
-          </Reveal>
-          <Reveal delay={0.1}>
             <p className="display-md text-ink">
               Specialised corporate advisory that complements a wealth
               management heritage.
@@ -129,7 +135,23 @@ export default function Home() {
       </section>
 
       {/* Tagline / crest panel */}
-      <section className="relative overflow-hidden bg-night py-36 text-paper">
+      <section className="relative overflow-hidden bg-night py-40 text-paper">
+        <Image
+          src="/images/city-night.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.22]"
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(120% 90% at 50% 0%, rgba(156,26,26,0.28), transparent 60%), linear-gradient(180deg, rgba(20,16,16,0.72) 0%, rgba(20,16,16,0.94) 100%)",
+          }}
+        />
         <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]">
           <Crest variant="cream" size={620} />
         </div>

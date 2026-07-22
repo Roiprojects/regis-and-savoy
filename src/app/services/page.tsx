@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import PageHeader from "@/components/PageHeader";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { ArrowIcon } from "@/components/ui";
+import { ArrowIcon, Figure } from "@/components/ui";
 import { services, contact } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -19,6 +19,20 @@ export default function ServicesPage() {
         title="Specialised support at every stage"
         intro="Four connected practices spanning the full corporate lifecycle — from incorporation and governance to compliance, restructuring and risk."
       />
+
+      <section className="pb-4 pt-2">
+        <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
+          <Reveal>
+            <Figure
+              src="/images/workspace.jpg"
+              alt="Corporate advisory workspace with glass-walled meeting rooms"
+              ratio="21 / 9"
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              priority
+            />
+          </Reveal>
+        </div>
+      </section>
 
       <section className="pb-10">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
