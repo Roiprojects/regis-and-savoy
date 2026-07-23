@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { brand } from "@/lib/content";
-import { Crest } from "@/components/ui";
 
 const KEY = "rs-disclaimer-ack";
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -32,29 +31,26 @@ export default function DisclaimerGate() {
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-night/95 px-6 backdrop-blur"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-forest/95 px-6 backdrop-blur"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="w-full max-w-xl rounded-sm border border-white/12 bg-night-2 p-10 text-paper"
+            className="w-full max-w-xl rounded-sm border border-white/12 bg-forest-2 p-10 text-ivory-2"
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <div className="flex justify-center">
-              <Crest variant="cream" size={68} />
-            </div>
-            <p className="mt-6 text-center font-[var(--font-display)] text-2xl">
+            <p className="text-center font-[var(--font-display)] text-2xl">
               {brand.legalName}
             </p>
-            <p className="mt-1 text-center text-[0.65rem] uppercase tracking-[0.28em] text-gold-soft">
+            <p className="mt-1 text-center text-[0.65rem] uppercase tracking-[0.28em] text-antique-soft">
               {brand.tagline}
             </p>
-            <div className="mt-8 space-y-4 text-sm leading-relaxed text-white/60">
+            <div className="mt-8 space-y-4 text-sm leading-relaxed text-ivory-2/60">
               <p>
                 The information provided on this website is intended solely for
                 general informational purposes. By proceeding, you acknowledge
@@ -70,13 +66,13 @@ export default function DisclaimerGate() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <button
                 onClick={accept}
-                className="rounded-sm bg-crimson px-8 py-3 text-xs uppercase tracking-[0.2em] text-paper transition-colors hover:bg-crimson-bright"
+                className="rounded-sm bg-antique px-8 py-3 text-xs uppercase tracking-[0.2em] text-ivory-2 transition-colors hover:bg-bronze"
               >
                 I Agree
               </button>
               <a
                 href="https://www.google.com"
-                className="rounded-sm border border-white/20 px-8 py-3 text-center text-xs uppercase tracking-[0.2em] text-white/60 transition-colors hover:border-white/40"
+                className="rounded-sm border border-white/20 px-8 py-3 text-center text-xs uppercase tracking-[0.2em] text-ivory-2/60 transition-colors hover:border-white/40"
               >
                 I Disagree
               </a>

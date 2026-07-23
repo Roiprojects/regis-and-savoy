@@ -23,8 +23,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Regis and Savoy Corporate Services LLP — Pure Trust · Pure Advice",
-    template: "%s · Regis and Savoy",
+    default: "Regis And Savoy Corporate Services LLP",
+    template: "%s · Regis And Savoy",
   },
   description:
     "Specialised corporate advisory — legal advisory, business structuring, governance & compliance, and risk & strategic advisory. An affiliate of Regis and Savoy Capital.",

@@ -3,7 +3,7 @@ import Link from "@/components/AppLink";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { Crest, ArrowIcon } from "@/components/ui";
+import { ArrowIcon } from "@/components/ui";
 import { brand, stewardship, heroLead } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -48,16 +48,13 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[1fr_1.3fr]">
           <Reveal>
-            <div className="flex items-center gap-4">
-              <Crest variant="red" size={72} />
-              <div>
-                <p className="font-[var(--font-display)] text-2xl italic text-crimson-deep">
-                  {brand.tagline}
-                </p>
-                <p className="text-xs uppercase tracking-[0.22em] text-muted">
-                  Affiliate of {brand.parent}
-                </p>
-              </div>
+            <div>
+              <p className="font-[var(--font-display)] text-2xl italic text-crimson-deep">
+                {brand.tagline}
+              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.22em] text-muted">
+                Affiliate of {brand.parent}
+              </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -125,8 +122,8 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-12 md:p-16">
-                  <Crest variant="red" size={72} />
-                  <p className="mt-8 font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-ink">
+                  <span className="mb-6 h-px w-12 bg-crimson" />
+                  <p className="font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-ink">
                     Corporate advisory that complements a wealth management
                     heritage — independent, discreet and enduring.
                   </p>

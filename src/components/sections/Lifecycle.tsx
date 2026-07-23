@@ -8,16 +8,16 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Lifecycle() {
   return (
-    <section id="approach" className="scroll-mt-24 bg-paper-3 py-28">
+    <section id="approach" data-bg="#efe1c6" className="scroll-mt-24 py-28">
       <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
         <Reveal>
-          <p className="eyebrow mb-6 text-crimson">Our Approach</p>
-          <h2 className="display-lg max-w-[18ch] text-ink">
+          <p className="eyebrow mb-6 text-bronze">Our Approach</p>
+          <h2 className="display-lg max-w-[18ch] text-inkg">
             Support through every stage of the business lifecycle
           </h2>
         </Reveal>
 
-        <div className="mt-20 grid gap-px overflow-hidden rounded-sm border border-line bg-line md:grid-cols-5">
+        <div className="mt-20 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone md:grid-cols-5">
           {lifecycle.map((stage, i) => (
             <motion.div
               key={stage.n}
@@ -25,15 +25,15 @@ export default function Lifecycle() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.08 }}
-              className="group relative bg-paper-2 p-8 transition-colors duration-500 hover:bg-night"
+              className="group relative bg-ivory-2 p-8 transition-colors duration-500 hover:bg-forest"
             >
-              <span className="font-[var(--font-display)] text-4xl text-crimson transition-colors duration-500 group-hover:text-gold-soft">
+              <span className="font-[var(--font-display)] text-4xl text-antique transition-colors duration-500 group-hover:text-antique-soft">
                 {stage.n}
               </span>
-              <h3 className="mt-6 font-[var(--font-display)] text-2xl text-ink transition-colors duration-500 group-hover:text-paper">
+              <h3 className="mt-6 font-[var(--font-display)] text-2xl text-inkg transition-colors duration-500 group-hover:text-ivory-2">
                 {stage.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted transition-colors duration-500 group-hover:text-white/60">
+              <p className="mt-3 text-sm leading-relaxed text-sage transition-colors duration-500 group-hover:text-ivory-2/60">
                 {stage.note}
               </p>
             </motion.div>

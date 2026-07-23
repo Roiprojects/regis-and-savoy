@@ -29,3 +29,5 @@ Thumbs.db
 
 # Packaged export artifact
 regis-site.zip
+
+.vercel

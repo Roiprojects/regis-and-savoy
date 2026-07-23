@@ -2,12 +2,16 @@
 // Sourced from the client-supplied brand document and logos.
 
 export const brand = {
-  name: "Regis and Savoy",
-  legalName: "Regis and Savoy Corporate Services LLP",
-  parent: "Regis and Savoy Capital",
-  tagline: "Pure Trust · Pure Advice",
-  taglineLine1: "Pure Trust",
-  taglineLine2: "Pure Advice",
+  // Wordmark rendered as two stacked lines, same font + size.
+  nameLine1: "Regis And Savoy",
+  nameLine2: "Corporate Services LLP",
+  name: "Regis And Savoy",
+  legalName: "Regis And Savoy Corporate Services LLP",
+  parent: "Regis And Savoy Capital",
+  // Placeholder tagline — final copy to be supplied by client.
+  tagline: "A Curated Corporate Ecosystem",
+  taglineLine1: "Sample Heading",
+  taglineLine2: "Placeholder Text",
   established: "Corporate Services",
 };
 

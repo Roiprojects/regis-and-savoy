@@ -1,5 +1,4 @@
 import { RevealWords } from "@/components/motion/Reveal";
-import { Crest } from "@/components/ui";
 
 export default function PageHeader({
   eyebrow,
@@ -12,9 +11,6 @@ export default function PageHeader({
 }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-40">
-      <div className="pointer-events-none absolute -right-24 -top-10 opacity-[0.05]">
-        <Crest variant="red" size={460} />
-      </div>
       <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
         <p className="eyebrow mb-8 flex items-center gap-3 text-crimson">
           <span className="h-px w-10 bg-crimson" />

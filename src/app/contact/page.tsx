@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
-import { Crest } from "@/components/ui";
+import Wordmark from "@/components/Wordmark";
 import { brand, contact, services } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -28,17 +28,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.1}>
             <div className="rounded-sm border border-line bg-paper-2 p-10">
-              <div className="flex items-center gap-4">
-                <Crest variant="red" size={64} />
-                <div>
-                  <p className="font-[var(--font-display)] text-xl text-ink">
-                    Regis <span className="text-crimson">&amp;</span> Savoy
-                  </p>
-                  <p className="text-[0.62rem] uppercase tracking-[0.22em] text-muted">
-                    Corporate Services LLP
-                  </p>
-                </div>
-              </div>
+              <Wordmark tone="dark" size="md" />
 
               <p className="mt-8 font-[var(--font-display)] text-lg italic text-crimson-deep">
                 {brand.tagline}
