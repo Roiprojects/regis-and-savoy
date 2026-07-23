@@ -98,11 +98,11 @@ export function RevealWords({
       }}
     >
       {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-baseline">
+        <span key={i} className="inline-block overflow-hidden align-baseline pt-[0.14em] pb-[0.28em] pr-[0.12em] -mt-[0.14em] -mb-[0.28em] -mr-[0.12em]">
           <motion.span
             className="inline-block"
             variants={{
-              hidden: { y: "110%" },
+              hidden: { y: "125%" },
               show: { y: 0, transition: { duration: 1, ease: EASE } },
             }}
           >
