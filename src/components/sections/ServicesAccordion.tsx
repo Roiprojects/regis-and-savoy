@@ -11,18 +11,32 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function ServicesAccordion({
   linkItems = false,
+  theme = "light",
 }: {
   linkItems?: boolean;
+  theme?: "light" | "dark";
 }) {
   const [openId, setOpenId] = useState<string | null>(services[0].id);
 
+  const isDark = theme === "dark";
+  const borderClass = isDark ? "border-white/15" : "border-stone";
+  const titleClosed = isDark ? "text-ivory-2 group-hover:text-copper-soft" : "text-inkg group-hover:text-copper";
+  const titleOpen = isDark ? "text-copper-soft" : "text-copper-dark";
+  const iconClosed = isDark ? "text-ivory-2/50 group-hover:text-copper-soft" : "text-sage group-hover:text-copper";
+  const iconOpen = "text-copper-soft";
+  const summaryClass = isDark ? "text-ivory-2/75" : "text-inkg-soft";
+  const itemBorder = isDark ? "border-white/10" : "border-stone/60";
+  const itemText = isDark ? "text-ivory-2/90" : "text-inkg";
+  const itemHover = isDark ? "hover:text-copper-soft" : "hover:text-copper-dark";
+  const linkBtn = isDark ? "text-ivory-2 hover:text-copper-soft" : "text-inkg hover:text-copper-dark";
+
   return (
-    <div className="border-t border-stone">
+    <div className={`border-t ${borderClass}`}>
       {services.map((s, i) => {
         const open = openId === s.id;
         const Icon = iconByService[s.id];
         return (
-          <div key={s.id} id={s.id} className="scroll-mt-28 border-b border-stone">
+          <div key={s.id} id={s.id} className={`scroll-mt-28 border-b ${borderClass}`}>
             <button
               onClick={() => setOpenId(open ? null : s.id)}
               className="group flex w-full items-center gap-6 py-8 text-left"
@@ -30,7 +44,7 @@ export default function ServicesAccordion({
             >
               <span
                 className={`h-8 w-8 shrink-0 transition-colors duration-300 ${
-                  open ? "text-antique" : "text-sage group-hover:text-antique"
+                  open ? iconOpen : iconClosed
                 }`}
               >
                 {Icon ? <Icon /> : null}
@@ -38,7 +52,7 @@ export default function ServicesAccordion({
               <span className="flex-1">
                 <span
                   className={`block font-[var(--font-display)] text-[clamp(1.6rem,3vw,2.6rem)] leading-tight transition-colors duration-300 ${
-                    open ? "text-bronze" : "text-inkg group-hover:text-bronze"
+                    open ? titleOpen : titleClosed
                   }`}
                 >
                   {s.title}
@@ -46,7 +60,11 @@ export default function ServicesAccordion({
               </span>
               <span
                 className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${
-                  open ? "border-antique bg-antique text-ivory-2" : "border-stone text-inkg"
+                  open
+                    ? "border-copper bg-copper text-ivory-2"
+                    : isDark
+                    ? "border-white/25 text-ivory-2"
+                    : "border-stone text-inkg"
                 }`}
               >
                 <span className="absolute h-[1.5px] w-3.5 bg-current" />
@@ -68,20 +86,20 @@ export default function ServicesAccordion({
                   className="overflow-hidden"
                 >
                   <div className="grid gap-8 pb-10 pl-14 md:grid-cols-[1fr_1.2fr]">
-                    <p className="max-w-md text-base leading-relaxed text-inkg-soft">
+                    <p className={`max-w-md text-base leading-relaxed ${summaryClass}`}>
                       {s.summary}
                     </p>
                     <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
                       {s.items.map((it) => (
                         <li
                           key={it}
-                          className="flex items-center gap-3 border-b border-stone/60 py-3 text-[0.95rem] text-inkg"
+                          className={`flex items-center gap-3 border-b ${itemBorder} py-3 text-[0.95rem] ${itemText}`}
                         >
-                          <span className="h-1 w-1 rounded-full bg-antique" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-copper-soft" />
                           {linkItems ? (
                             <Link
                               href={`/services#${s.id}`}
-                              className="transition-colors hover:text-bronze"
+                              className={`transition-colors ${itemHover}`}
                             >
                               {it}
                             </Link>
@@ -102,7 +120,7 @@ export default function ServicesAccordion({
       <div className="pt-10">
         <Link
           href="/services"
-          className="group inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-inkg transition-colors hover:text-bronze"
+          className={`group inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] transition-colors ${linkBtn}`}
         >
           Explore all services
           <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />

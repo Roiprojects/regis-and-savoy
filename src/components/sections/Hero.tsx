@@ -5,19 +5,21 @@ import Link from "@/components/AppLink";
 import { RevealWords } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
 import { heroLead, brand } from "@/lib/content";
+import TerrariumCard from "@/components/TerrariumCard";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
   return (
     <section
-      data-bg="#f7f4ee"
+      data-bg="#e3d3bf"
       className="relative flex min-h-[100svh] flex-col overflow-hidden pb-12 pt-32"
+      style={{ backgroundColor: "#e3d3bf" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_10%,rgba(255,255,255,0.7),transparent_60%)]" />
 
       <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[1.1fr_0.9fr]">
-        {/* Copy — original content */}
+        {/* Copy */}
         <div>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -25,17 +27,19 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
             className="mb-8 flex items-center gap-4"
           >
-            <span className="h-px w-12 bg-gradient-to-r from-antique to-transparent" />
-            <span className="eyebrow text-bronze">{brand.tagline}</span>
+            <span className="h-px w-12 bg-gradient-to-r from-copper to-transparent" />
+            <span className="eyebrow text-copper font-medium">{brand.tagline}</span>
           </motion.div>
 
           <h1
-            className="display-xl max-w-[16ch] text-inkg"
-            style={{ fontSize: "clamp(2.5rem, 5.6vw, 5.2rem)" }}
+            className="display-xl text-inkg font-serif"
+            style={{ fontSize: "clamp(2.4rem, 5.2vw, 4.8rem)", lineHeight: 1.08 }}
           >
-            <RevealWords text="Driven by stewardship," delay={0.15} />
-            <span className="block italic text-antique">
-              <RevealWords text="focused on trust for the longer term" delay={0.4} />
+            <span className="block">
+              <RevealWords text="A corporate advisory practice" delay={0.15} />
+            </span>
+            <span className="block italic text-copper">
+              <RevealWords text="built on trust" delay={0.4} />
             </span>
           </h1>
 
@@ -54,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 1, ease: EASE, delay: 1.05 }}
             className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
           >
-            <Link href="/services" className="btn btn-terra group">
+            <Link href="/services" className="btn btn-terra group bg-copper hover:bg-copper-dark">
               Our Services
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
@@ -65,7 +69,7 @@ export default function Hero() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-antique"
+                className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-copper"
               >
                 {l.label}
                 <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
@@ -74,31 +78,14 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Terrarium image from the brand doc — framed glass with light reflection */}
+        {/* 3D Flip Terrarium Emblem Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.3, ease: EASE, delay: 0.35 }}
-          className="hidden lg:block"
+          transition={{ duration: 1.2, ease: EASE, delay: 0.3 }}
+          className="flex justify-center"
         >
-          <div className="relative mx-auto aspect-[3/4] w-[min(30vw,420px)] overflow-hidden rounded-md ring-1 ring-antique/30 shadow-[0_40px_90px_-40px_rgba(34,52,40,0.5)]">
-            <img
-              src="/images/hero-terrarium.jpg"
-              alt="An architectural glass terrarium — a curated corporate ecosystem"
-              className="h-full w-full object-cover"
-            />
-            {/* warm ivory/green wash to sit the photo in the palette */}
-            <span
-              className="pointer-events-none absolute inset-0 mix-blend-multiply"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(247,244,238,0.08) 0%, rgba(34,52,40,0.18) 100%)",
-              }}
-            />
-            <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/20" />
-            {/* slow light reflection sweeping across the glass */}
-            <span className="glass-sheen" />
-          </div>
+          <TerrariumCard />
         </motion.div>
       </div>
 

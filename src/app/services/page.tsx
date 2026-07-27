@@ -57,13 +57,18 @@ export default function ServicesPage() {
               </Reveal>
 
               <Stagger className="grid gap-px self-start overflow-hidden border border-line bg-line sm:grid-cols-2">
-                {s.items.map((it) => (
-                  <StaggerItem key={it}>
+                {(s.details || s.items.map(it => ({ name: it, desc: "" }))).map((d) => (
+                  <StaggerItem key={d.name}>
                     <div className="group h-full bg-paper-2 p-7 transition-colors duration-500 hover:bg-night">
-                      <span className="mb-4 block h-1.5 w-1.5 rounded-full bg-gold transition-colors group-hover:bg-gold-soft" />
+                      <span className="mb-4 block h-1.5 w-1.5 rounded-full bg-copper transition-colors group-hover:bg-copper-soft" />
                       <p className="font-[var(--font-display)] text-xl leading-snug text-ink transition-colors duration-500 group-hover:text-paper">
-                        {it}
+                        {d.name}
                       </p>
+                      {d.desc ? (
+                        <p className="mt-2.5 text-sm leading-relaxed text-muted transition-colors duration-500 group-hover:text-ivory-2/70">
+                          {d.desc}
+                        </p>
+                      ) : null}
                     </div>
                   </StaggerItem>
                 ))}

@@ -25,21 +25,29 @@
   --color-gold-bright: #e6cd94;
 
   /* ---- Terrarium theme (homepage + shared frame) ---- */
-  --color-ivory: #f7f4ee;        /* primary warm ivory (avoid pure white) */
+  --color-ivory: #e3d3bf;        /* primary warm linen ivory (matching hero image) */
   --color-ivory-2: #fbfaf5;
   --color-ivory-3: #efe9dd;
   --color-forest: #223428;       /* dark green sections (never black) */
   --color-forest-2: #2b4234;
   --color-forest-deep: #182720;
   --color-forest-soft: #3a5244;
-  --color-antique: #b18a43;      /* antique gold — buttons, icons */
-  --color-antique-soft: #c9a867;
-  --color-bronze: #8d6a2f;       /* button hover / deep bronze */
+  --color-antique: #c0724a;      /* copper accent — replacing gold */
+  --color-antique-soft: #d9926d;
+  --color-bronze: #9e532d;       /* copper hover / deep copper */
   --color-stone: #d9d4cc;        /* divider lines / soft stone */
   --color-stone-soft: #e7e2d9;
   --color-inkg: #26302a;         /* dark green ink text (not black) */
   --color-inkg-soft: #566158;
   --color-sage: #7c857b;         /* muted sage */
+
+  /* ---- Copper palette tokens ---- */
+  --color-copper: #c0724a;       /* rich primary copper */
+  --color-copper-soft: #d9926d;  /* light copper highlight */
+  --color-copper-bright: #e49e79;
+  --color-copper-dark: #9e532d;  /* deep burnished copper */
+  --color-copper-hover: #a85830;
+  --color-linen: #e3d3bf;        /* exact linen background tone from ChatGPT image */
 
   /* Dark tokens redefined to deep green so NO pure black remains sitewide */
   --color-night: #223428;
@@ -61,7 +69,7 @@
 }
 
 :root {
-  --background: var(--color-ivory);
+  --background: var(--color-linen);
   --foreground: var(--color-inkg);
 }
 
@@ -71,15 +79,15 @@
 }
 
 html {
-  background: var(--color-ivory);
+  background: var(--color-linen);
 }
 
 body {
   position: relative;
   background:
-    radial-gradient(130% 100% at 82% -8%, rgba(177, 138, 67, 0.06), transparent 55%),
-    radial-gradient(120% 90% at 0% 0%, rgba(255, 253, 248, 0.7), transparent 45%),
-    var(--color-ivory);
+    radial-gradient(130% 100% at 82% -8%, rgba(192, 114, 74, 0.08), transparent 55%),
+    radial-gradient(120% 90% at 0% 0%, rgba(251, 250, 245, 0.6), transparent 45%),
+    var(--color-linen);
   color: var(--color-inkg);
   font-family: var(--font-sans);
   font-feature-settings: "kern", "liga", "calt";

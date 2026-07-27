@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="max-w-4xl font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] text-ivory-2">
               &ldquo;Every resilient business is built within a carefully
               designed ecosystem of governance, compliance, structure and{" "}
-              <span className="italic text-antique-soft">strategic guidance.</span>&rdquo;
+              <span className="italic text-copper-soft">strategic guidance.</span>&rdquo;
             </p>
             <p className="mt-8 text-sm uppercase tracking-[0.22em] text-ivory-2/45">
               {brand.legalName}
@@ -35,7 +35,7 @@ export default function Footer() {
             Specialised corporate advisory, independently provided and affiliated
             with {brand.parent}.
           </p>
-          <p className="mt-6 font-[var(--font-display)] text-lg italic text-antique-soft">
+          <p className="mt-6 font-[var(--font-display)] text-lg italic text-copper-soft">
             {brand.tagline}
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function Footer() {
               <li key={n.href}>
                 <Link
                   href={n.href}
-                  className="text-sm text-ivory-2/70 transition-colors hover:text-antique-soft"
+                  className="text-sm text-ivory-2/70 transition-colors hover:text-copper-soft"
                 >
                   {n.label}
                 </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
               <li key={s.id}>
                 <Link
                   href={`/services#${s.id}`}
-                  className="text-sm text-ivory-2/70 transition-colors hover:text-antique-soft"
+                  className="text-sm text-ivory-2/70 transition-colors hover:text-copper-soft"
                 >
                   {s.title}
                 </Link>
@@ -87,14 +87,14 @@ export default function Footer() {
             <button
               type="submit"
               aria-label="Subscribe"
-              className="text-antique-soft transition-transform duration-500 group-hover:translate-x-1"
+              className="text-copper-soft transition-transform duration-500 group-hover:translate-x-1"
             >
               <ArrowIcon />
             </button>
           </form>
           <a
             href={`mailto:${contact.email}`}
-            className="mt-8 block text-sm text-ivory-2/70 transition-colors hover:text-antique-soft"
+            className="mt-8 block text-sm text-ivory-2/70 transition-colors hover:text-copper-soft"
           >
             {contact.email}
           </a>

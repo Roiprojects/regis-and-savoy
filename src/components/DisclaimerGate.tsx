@@ -44,31 +44,32 @@ export default function DisclaimerGate() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <p className="text-center font-[var(--font-display)] text-2xl">
+            <p className="text-center font-[var(--font-display)] text-2xl text-ivory-2">
               {brand.legalName}
             </p>
-            <p className="mt-1 text-center text-[0.65rem] uppercase tracking-[0.28em] text-antique-soft">
-              {brand.tagline}
+            <p className="mt-1 text-center text-[0.65rem] uppercase tracking-[0.28em] text-copper-soft">
+              Business Disclaimer & Confirmation
             </p>
-            <div className="mt-8 space-y-4 text-sm leading-relaxed text-ivory-2/60">
+            <div className="mt-6 max-h-[220px] space-y-3 overflow-y-auto pr-2 text-xs leading-relaxed text-ivory-2/70">
               <p>
-                The information provided on this website is intended solely for
-                general informational purposes. By proceeding, you acknowledge
-                that there has been no advertisement, solicitation or inducement
-                of any kind.
+                By using this website, you acknowledge and agree that the information provided herein is for general informational purposes only and does not constitute legal, financial, or professional advice. It should not be relied upon as a substitute for personalized consultation with qualified professionals.
               </p>
               <p>
-                Nothing on this website constitutes legal or professional advice,
-                and no lawyer&ndash;client or advisory relationship is created by
-                accessing or using it.
+                We do not accept any responsibility or liability for any loss, damage, or inconvenience caused by reliance on the information contained on this website.
+              </p>
+              <p>
+                No attorney-client, lawyer-client, or professional relationship is established by visiting or using this website unless explicitly agreed upon in writing.
+              </p>
+              <p className="font-medium text-copper-soft pt-1">
+                Confirmation: I confirm that I have read, understood, and agree to the above terms and conditions.
               </p>
             </div>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <button
                 onClick={accept}
-                className="rounded-sm bg-antique px-8 py-3 text-xs uppercase tracking-[0.2em] text-ivory-2 transition-colors hover:bg-bronze"
+                className="rounded-sm bg-copper px-8 py-3 text-xs uppercase tracking-[0.2em] text-ivory-2 transition-colors hover:bg-copper-dark shadow-md"
               >
-                I Agree
+                I Confirm & Agree
               </button>
               <a
                 href="https://www.google.com"

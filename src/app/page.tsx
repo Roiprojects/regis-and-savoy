@@ -9,9 +9,10 @@ import { ArrowIcon } from "@/components/ui";
 import { stewardship, specialisms, brand, contact } from "@/lib/content";
 
 // scroll-flip background stops
-const IVORY = "#f7f4ee";
-const HONEY = "#efe1c6";
-const SAGE = "#dde6d4";
+const LINEN = "#e3d3bf";
+const HONEY = "#e8d8c4";
+const EXPERTISE_GREEN = "#1e3326";
+const SAGE = "#c5d4c2";
 const FOREST = "#223428";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
         data-bg={HONEY}
         className="relative overflow-hidden py-32"
       >
-        {/* succulent accent (trimmed from the brand images) */}
+        {/* succulent accent */}
         <img
           src="/images/succulents/green.png"
           alt=""
@@ -34,8 +35,8 @@ export default function Home() {
         />
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <p className="eyebrow mb-6 text-bronze">The Firm</p>
-            <p className="font-[var(--font-display)] text-2xl italic text-antique">
+            <p className="eyebrow mb-6 text-copper font-medium">The Firm</p>
+            <p className="font-[var(--font-display)] text-2xl italic text-copper">
               {brand.tagline}
             </p>
           </Reveal>
@@ -49,7 +50,7 @@ export default function Home() {
             </p>
             <Link
               href="/about"
-              className="group mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-inkg transition-colors duration-500 hover:text-antique"
+              className="group mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-inkg transition-colors duration-500 hover:text-copper"
             >
               About the firm
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
@@ -71,33 +72,31 @@ export default function Home() {
               <span className="px-9 font-[var(--font-display)] text-2xl italic text-ivory-2/85">
                 {s}
               </span>
-              <span className="text-antique-soft">✦</span>
+              <span className="text-copper-soft">✦</span>
             </span>
           ))}
         </Marquee>
       </section>
 
-      {/* Services */}
-      <section data-bg={SAGE} className="py-32">
+      {/* Services / Expertise — rich deep green background */}
+      <section data-bg={EXPERTISE_GREEN} className="py-32 text-ivory-2">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <Reveal>
-              <p className="eyebrow mb-6 text-bronze">Expertise</p>
-              <h2 className="display-lg text-inkg">
+              <p className="eyebrow mb-6 text-copper-soft">Expertise</p>
+              <h2 className="display-lg text-ivory-2">
                 Deep advisory expertise across your business lifecycle
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="max-w-md text-lg leading-relaxed text-inkg-soft lg:pb-3">
-                Four connected practices — from formation and governance to
-                restructuring, compliance and risk — delivered with the
-                discretion of a private office.
+              <p className="max-w-md text-lg leading-relaxed text-ivory-2/70 lg:pb-3">
+                Comprehensive corporate advisory practice — spanning business formation, corporate governance, contract management, regulatory compliance, risk, and private equity advisory.
               </p>
             </Reveal>
           </div>
 
           <div className="mt-16">
-            <ServicesAccordion linkItems />
+            <ServicesAccordion linkItems theme="dark" />
           </div>
         </div>
       </section>
@@ -179,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section data-bg={IVORY} className="py-32">
+      <section data-bg={LINEN} className="py-32">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-10 border-t border-stone pt-16 md:flex-row md:items-end">

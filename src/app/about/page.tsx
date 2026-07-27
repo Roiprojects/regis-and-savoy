@@ -40,7 +40,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About the Firm"
-        title="A corporate advisory practice built on trust"
+        title="Driven by stewardship, focused on trust for the longer term"
         intro={heroLead}
       />
 
