@@ -93,7 +93,8 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 overflow-y-auto bg-forest text-ivory-2"
+            data-lenis-prevent
+            className="fixed inset-0 z-40 overflow-y-auto overscroll-contain bg-forest text-ivory-2"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
