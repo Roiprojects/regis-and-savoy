@@ -41,11 +41,11 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         variants={container}
         className="relative w-full flex-1"
       >
-        {/* Transparent terrarium element, layered over the section backdrop */}
+        {/* Terrarium element, composed over the matching scene backdrop */}
         <img
           src="/images/terrarium-element.png"
           alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
-          className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_30px_50px_rgba(80,60,30,0.28)] transition-transform duration-700 group-hover:scale-[1.03]"
+          className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_26px_44px_rgba(80,60,30,0.26)] transition-transform duration-700 group-hover:scale-[1.03]"
         />
         {/* slow light reflection sweeping across the glass */}
         <span className="glass-sheen" />
@@ -76,15 +76,6 @@ export default function TerrariumEmblem({ href }: { href: string }) {
           </motion.span>
         ))}
       </motion.div>
-
-      {/* Prompt to discover the framework — sits free, below the vessel */}
-      <span className="mt-5 flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-copper-dark">
-        <span className="h-px w-6 bg-copper/60" />
-        <span className="transition-colors duration-300 group-hover:text-copper">
-          Discover the Terrarium Framework
-        </span>
-        <span className="h-px w-6 bg-copper/60" />
-      </span>
     </Link>
   );
 }

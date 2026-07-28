@@ -11,18 +11,15 @@ import {
   brand,
   contact,
   servicesIntro,
-  whyTerrarium,
   services,
 } from "@/lib/content";
 
 // scroll-flip background stops
 const LINEN = "#e3d3bf";
-const HONEY = "#e8d8c4";
 const EXPERTISE_GREEN = "#1e3326";
 const SAGE = "#c5d4c2";
 const FOREST = "#223428";
 
-const WHY_HREF = "/why-regis-and-savoy";
 const pe = services.find((s) => s.id === "private-equity")!;
 
 export default function Home() {
@@ -30,42 +27,6 @@ export default function Home() {
     <>
       <ScrollBg />
       <Hero />
-
-      {/* Why Regis and Savoy — the Terrarium Framework teaser */}
-      <section data-bg={HONEY} className="relative overflow-hidden py-32">
-        <img
-          src="/images/succulents/green.png"
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute right-[6vw] top-12 w-14 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.25)] md:w-20"
-        />
-        <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[0.8fr_1.2fr]">
-          <Reveal>
-            <p className="eyebrow mb-6 text-copper font-medium">
-              {whyTerrarium.eyebrow}
-            </p>
-            <p className="font-[var(--font-display)] text-2xl italic text-copper">
-              {brand.tagline}
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="display-md text-inkg">
-              The Terrarium Framework: an integrated approach to corporate
-              advisory.
-            </p>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-inkg-soft">
-              {whyTerrarium.intro}
-            </p>
-            <Link
-              href={WHY_HREF}
-              className="group mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-inkg transition-colors duration-500 hover:text-copper"
-            >
-              Why Regis and Savoy
-              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
 
       {/* Marquee band */}
       <section
@@ -161,12 +122,6 @@ export default function Home() {
         data-bg={FOREST}
         className="relative overflow-hidden bg-forest py-36 text-ivory-2"
       >
-        <img
-          src="/images/succulents/teal.png"
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute bottom-8 left-[6vw] w-16 opacity-95 drop-shadow-[0_18px_28px_rgba(0,0,0,0.35)] md:w-20"
-        />
         <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)] text-center">
           <Reveal>
             <p className="text-antique-gradient font-[var(--font-display)] text-[clamp(2rem,5.5vw,4.6rem)] italic leading-[1.08]">

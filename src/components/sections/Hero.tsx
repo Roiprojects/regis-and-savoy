@@ -14,14 +14,13 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export default function Hero() {
   return (
     <section
-      data-bg="#e9ddc8"
+      data-bg="#e6d6c2"
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-cover bg-center bg-no-repeat pb-12 pt-32"
       style={{
-        backgroundColor: "#e9ddc8",
+        backgroundColor: "#e6d6c2",
         backgroundImage: "url('/images/terrarium-bg.png')",
       }}
     >
-
       <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[1.1fr_0.9fr]">
         {/* Copy */}
         <div>
@@ -103,8 +102,12 @@ export default function Hero() {
         transition={{ delay: 1.3, duration: 1 }}
         className="relative mx-auto mt-8 flex w-full max-w-[1400px] items-end justify-between px-[var(--spacing-gutter)]"
       >
-        <p className="whitespace-nowrap text-xs uppercase tracking-[0.2em] text-sage">
-          An affiliate of <span className="text-bronze">{brand.parent}</span>
+        <p className="flex items-center gap-3 whitespace-nowrap text-[0.68rem] uppercase tracking-[0.22em] text-inkg/55">
+          <span className="h-px w-8 shrink-0 bg-copper/45" />
+          <span>
+            An affiliate of{" "}
+            <span className="font-medium text-copper-dark">{brand.parent}</span>
+          </span>
         </p>
         <span className="hidden flex-col items-center gap-2 text-[0.62rem] uppercase tracking-[0.3em] text-sage sm:flex">
           Scroll
