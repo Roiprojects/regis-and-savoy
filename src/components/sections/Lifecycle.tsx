@@ -34,7 +34,7 @@ export default function Lifecycle() {
                 src={`/images/succulents/${STAGE_ICONS[i % STAGE_ICONS.length]}`}
                 alt=""
                 aria-hidden
-                className="h-12 w-12 object-contain drop-shadow-[0_8px_14px_rgba(34,52,40,0.25)]"
+                className="h-10 w-10 object-contain drop-shadow-[0_8px_14px_rgba(34,52,40,0.25)]"
               />
               <h3 className="mt-6 font-[var(--font-display)] text-2xl text-inkg transition-colors duration-500 group-hover:text-ivory-2">
                 {stage.title}

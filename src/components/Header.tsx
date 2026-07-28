@@ -93,13 +93,13 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-forest text-ivory-2"
+            className="fixed inset-0 z-40 overflow-y-auto bg-forest text-ivory-2"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <div className="mx-auto flex h-full max-w-[1400px] flex-col justify-center px-[var(--spacing-gutter)] pt-24 pb-12">
+            <div className="mx-auto flex min-h-full max-w-[1400px] flex-col justify-center px-[var(--spacing-gutter)] pt-28 pb-16">
               <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
                 {/* Primary links */}
                 <div>

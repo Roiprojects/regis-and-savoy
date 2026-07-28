@@ -15,7 +15,7 @@ export default function Footer() {
       <Botanical
         src="teal.png"
         opacity={80}
-        className="right-[5vw] top-14 hidden w-20 md:block md:w-28"
+        className="right-[5vw] top-12 hidden w-14 md:block md:w-20"
       />
       {/* Big quote band */}
       <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">

@@ -17,7 +17,7 @@ export default function PageHeader({
       {/* botanical accent sits in the top padding, above the copy */}
       <Botanical
         src={accent}
-        className="right-[4vw] top-14 hidden w-20 sm:block md:w-28"
+        className="right-[4vw] top-12 hidden w-14 sm:block md:w-20"
       />
       <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
         <p className="eyebrow mb-8 flex items-center gap-3 text-crimson">

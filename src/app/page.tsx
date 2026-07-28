@@ -37,7 +37,7 @@ export default function Home() {
           src="/images/succulents/green.png"
           alt=""
           aria-hidden
-          className="pointer-events-none absolute right-[6vw] top-16 w-24 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.25)] md:w-32"
+          className="pointer-events-none absolute right-[6vw] top-12 w-14 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.25)] md:w-20"
         />
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
@@ -121,7 +121,7 @@ export default function Home() {
           src="/images/succulents/lilac.png"
           alt=""
           aria-hidden
-          className="pointer-events-none absolute right-[5vw] top-24 w-20 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.22)] md:w-28"
+          className="pointer-events-none absolute bottom-8 left-[5vw] w-14 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.22)] md:w-20"
         />
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[1fr_1fr]">
           <Reveal>
@@ -165,7 +165,7 @@ export default function Home() {
           src="/images/succulents/teal.png"
           alt=""
           aria-hidden
-          className="pointer-events-none absolute bottom-8 left-[6vw] w-24 opacity-95 drop-shadow-[0_18px_28px_rgba(0,0,0,0.35)] md:w-28"
+          className="pointer-events-none absolute bottom-8 left-[6vw] w-16 opacity-95 drop-shadow-[0_18px_28px_rgba(0,0,0,0.35)] md:w-20"
         />
         <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)] text-center">
           <Reveal>

@@ -58,7 +58,7 @@ export default function CapitalPage() {
 
       {/* At a glance */}
       <section className="relative overflow-hidden py-24">
-        <Botanical src="teal.png" className="right-[4vw] top-10 hidden w-16 sm:block md:w-24" />
+        <Botanical src="teal.png" className="right-[4vw] top-10 hidden w-12 sm:block md:w-16" />
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
             <p className="eyebrow mb-10 text-crimson">At a Glance</p>
