@@ -1,16 +1,24 @@
 import { RevealWords } from "@/components/motion/Reveal";
+import Botanical from "@/components/Botanical";
 
 export default function PageHeader({
   eyebrow,
   title,
   intro,
+  accent = "green.png",
 }: {
   eyebrow: string;
   title: string;
   intro?: string;
+  accent?: string;
 }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-40">
+      {/* botanical accent sits in the top padding, above the copy */}
+      <Botanical
+        src={accent}
+        className="right-[4vw] top-14 hidden w-20 sm:block md:w-28"
+      />
       <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
         <p className="eyebrow mb-8 flex items-center gap-3 text-crimson">
           <span className="h-px w-10 bg-crimson" />

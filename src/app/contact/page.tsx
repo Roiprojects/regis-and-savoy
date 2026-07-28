@@ -15,9 +15,10 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Contact"
-        title="Start a conversation in confidence"
+        eyebrow="Contact Us"
+        title={contact.title}
         intro={contact.intro}
+        accent="purple.png"
       />
 
       <section className="pb-32">

@@ -6,6 +6,9 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+// A botanical accent per lifecycle stage — replaces the old numbering.
+const STAGE_ICONS = ["green.png", "teal.png", "lilac.png", "purple.png", "redgreen.png"];
+
 export default function Lifecycle() {
   return (
     <section id="approach" data-bg="#efe1c6" className="scroll-mt-24 py-28">
@@ -27,9 +30,12 @@ export default function Lifecycle() {
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.08 }}
               className="group relative bg-ivory-2 p-8 transition-colors duration-500 hover:bg-forest"
             >
-              <span className="font-[var(--font-display)] text-4xl text-antique transition-colors duration-500 group-hover:text-antique-soft">
-                {stage.n}
-              </span>
+              <img
+                src={`/images/succulents/${STAGE_ICONS[i % STAGE_ICONS.length]}`}
+                alt=""
+                aria-hidden
+                className="h-12 w-12 object-contain drop-shadow-[0_8px_14px_rgba(34,52,40,0.25)]"
+              />
               <h3 className="mt-6 font-[var(--font-display)] text-2xl text-inkg transition-colors duration-500 group-hover:text-ivory-2">
                 {stage.title}
               </h3>

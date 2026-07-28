@@ -5,13 +5,19 @@ import { brand, nav, services, contact } from "@/lib/content";
 import { ArrowIcon } from "@/components/ui";
 import { Reveal } from "@/components/motion/Reveal";
 import Wordmark from "@/components/Wordmark";
+import Botanical from "@/components/Botanical";
 
 export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <footer className="relative overflow-hidden bg-forest text-ivory-2">
-      {/* Big quote band — placeholder copy */}
+      <Botanical
+        src="teal.png"
+        opacity={80}
+        className="right-[5vw] top-14 hidden w-20 md:block md:w-28"
+      />
+      {/* Big quote band */}
       <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">
         <div className="mx-auto max-w-[1400px]">
           <Reveal>
@@ -98,11 +104,6 @@ export default function Footer() {
           >
             {contact.email}
           </a>
-          <div className="mt-6 flex gap-4 text-xs uppercase tracking-[0.18em] text-ivory-2/45">
-            <a href="#" className="hover:text-antique-soft">LinkedIn</a>
-            <a href="#" className="hover:text-antique-soft">RSS</a>
-            <a href="#" className="hover:text-antique-soft">WhatsApp</a>
-          </div>
         </div>
       </div>
 

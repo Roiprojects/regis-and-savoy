@@ -100,4 +100,6 @@ export const iconByService: Record<string, () => React.JSX.Element> = {
   "business-structuring": IconStone,
   "governance-compliance": IconRoots,
   "risk-strategic-advisory": IconDroplet,
+  "private-equity": IconShoot,
+  "specialized-dispute-audit": IconBranch,
 };

@@ -53,7 +53,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group relative text-[0.8rem] uppercase tracking-[0.16em] text-inkg-soft transition-colors hover:text-bronze"
+                  className="group relative whitespace-nowrap text-[0.8rem] uppercase tracking-[0.16em] text-inkg-soft transition-colors hover:text-bronze"
                 >
                   {item.label}
                   <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-antique transition-all duration-500 group-hover:w-full" />

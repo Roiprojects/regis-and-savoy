@@ -4,19 +4,23 @@ import { motion } from "framer-motion";
 import Link from "@/components/AppLink";
 import { RevealWords } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
-import { heroLead, brand } from "@/lib/content";
-import TerrariumCard from "@/components/TerrariumCard";
+import { hero, brand } from "@/lib/content";
+import TerrariumEmblem from "@/components/TerrariumEmblem";
+
+const WHY_HREF = "/why-regis-and-savoy";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
   return (
     <section
-      data-bg="#e3d3bf"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden pb-12 pt-32"
-      style={{ backgroundColor: "#e3d3bf" }}
+      data-bg="#e9ddc8"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-cover bg-center bg-no-repeat pb-12 pt-32"
+      style={{
+        backgroundColor: "#e9ddc8",
+        backgroundImage: "url('/images/terrarium-bg.png')",
+      }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_10%,rgba(255,255,255,0.7),transparent_60%)]" />
 
       <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[1.1fr_0.9fr]">
         {/* Copy */}
@@ -33,23 +37,32 @@ export default function Hero() {
 
           <h1
             className="display-xl text-inkg font-serif"
-            style={{ fontSize: "clamp(2.4rem, 5.2vw, 4.8rem)", lineHeight: 1.08 }}
+            style={{ fontSize: "clamp(2rem, 4.2vw, 3.7rem)", lineHeight: 1.1 }}
           >
-            <span className="block">
-              <RevealWords text="A corporate advisory practice" delay={0.15} />
+            <span className="block whitespace-nowrap">
+              <RevealWords text={hero.headlineLine1} delay={0.15} />
             </span>
-            <span className="block italic text-copper">
-              <RevealWords text="built on trust" delay={0.4} />
+            <span className="block whitespace-nowrap italic text-copper">
+              <RevealWords text={hero.headlineLine2} delay={0.4} />
             </span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: EASE, delay: 0.9 }}
-            className="mt-9 max-w-xl text-lg leading-relaxed text-inkg-soft"
+            transition={{ duration: 1, ease: EASE, delay: 0.8 }}
+            className="mt-7 max-w-xl font-[var(--font-display)] text-xl italic leading-snug text-copper-dark"
           >
-            {heroLead}
+            {hero.sub}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: EASE, delay: 0.95 }}
+            className="mt-6 max-w-xl text-base leading-relaxed text-inkg-soft"
+          >
+            {hero.lead}
           </motion.p>
 
           <motion.div
@@ -58,34 +71,28 @@ export default function Hero() {
             transition={{ duration: 1, ease: EASE, delay: 1.05 }}
             className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
           >
-            <Link href="/services" className="btn btn-terra group bg-copper hover:bg-copper-dark">
-              Our Services
+            <Link href={hero.ctas[0].href} className="btn btn-terra group bg-copper hover:bg-copper-dark">
+              {hero.ctas[0].label}
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
-            {[
-              { label: "Our Purpose", href: "/about" },
-              { label: "Our Approach", href: "/#approach" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-copper"
-              >
-                {l.label}
-                <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
-              </Link>
-            ))}
+            <Link
+              href={hero.ctas[1].href}
+              className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-copper"
+            >
+              {hero.ctas[1].label}
+              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
+            </Link>
           </motion.div>
         </div>
 
-        {/* 3D Flip Terrarium Emblem Card */}
+        {/* Terrarium emblem — annotations reveal on hover, click opens the framework */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: EASE, delay: 0.3 }}
           className="flex justify-center"
         >
-          <TerrariumCard />
+          <TerrariumEmblem href={WHY_HREF} />
         </motion.div>
       </div>
 
@@ -96,7 +103,7 @@ export default function Hero() {
         transition={{ delay: 1.3, duration: 1 }}
         className="relative mx-auto mt-8 flex w-full max-w-[1400px] items-end justify-between px-[var(--spacing-gutter)]"
       >
-        <p className="max-w-[26ch] text-xs uppercase leading-relaxed tracking-[0.2em] text-sage">
+        <p className="whitespace-nowrap text-xs uppercase tracking-[0.2em] text-sage">
           An affiliate of <span className="text-bronze">{brand.parent}</span>
         </p>
         <span className="hidden flex-col items-center gap-2 text-[0.62rem] uppercase tracking-[0.3em] text-sage sm:flex">
