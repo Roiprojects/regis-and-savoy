@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/AppLink";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/motion/Reveal";
-import { ArrowIcon, Figure } from "@/components/ui";
+import { ArrowIcon } from "@/components/ui";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import { contact } from "@/lib/content";
 
@@ -22,21 +22,7 @@ export default function ServicesPage() {
         accent="teal.png"
       />
 
-      <section className="pb-4 pt-2">
-        <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
-          <Reveal>
-            <Figure
-              src="/images/workspace.jpg"
-              alt="Corporate advisory workspace with glass-walled meeting rooms"
-              ratio="21 / 9"
-              sizes="(max-width: 1400px) 100vw, 1400px"
-              priority
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="pb-10">
+      <section className="pb-10 pt-4">
         <ServicesShowcase />
       </section>
 

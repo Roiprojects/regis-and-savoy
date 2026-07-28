@@ -2,6 +2,7 @@
 
 import Link from "@/components/AppLink";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { brand, nav, services } from "@/lib/content";
 import { ArrowIcon } from "@/components/ui";
@@ -27,7 +28,13 @@ export default function Header() {
     };
   }, [open]);
 
-  const barText = open ? "text-ivory-2" : "text-inkg";
+  // The Capital page has a navy hero — the floating bar sits on dark until scrolled.
+  const pathname = usePathname();
+  const isCapital = pathname?.startsWith("/capital");
+  const onDark = !open && isCapital && !scrolled;
+  const lightText = open || onDark;
+
+  const barText = lightText ? "text-ivory-2" : "text-inkg";
 
   return (
     <>
@@ -38,12 +45,14 @@ export default function Header() {
               ? "h-[64px] border-white/15 bg-transparent"
               : scrolled
                 ? "h-[64px] border-stone/70 bg-ivory/80 shadow-[0_16px_40px_-24px_rgba(34,52,40,0.35)] backdrop-blur-xl"
-                : "h-[70px] border-stone/40 bg-ivory/45 shadow-[0_10px_30px_-26px_rgba(34,52,40,0.28)] backdrop-blur-md"
+                : onDark
+                  ? "h-[70px] border-white/15 bg-[#14213d]/35 shadow-[0_10px_30px_-26px_rgba(0,0,0,0.4)] backdrop-blur-md"
+                  : "h-[70px] border-stone/40 bg-ivory/45 shadow-[0_10px_30px_-26px_rgba(34,52,40,0.28)] backdrop-blur-md"
           }`}
         >
           {/* Brand — text wordmark only, no logo */}
           <Link href="/" aria-label={`${brand.name} home`}>
-            <Wordmark tone={open ? "light" : "dark"} size="sm" />
+            <Wordmark tone={lightText ? "light" : "dark"} size="sm" />
           </Link>
 
           {/* Desktop nav */}
@@ -53,7 +62,11 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group relative whitespace-nowrap text-[0.8rem] uppercase tracking-[0.16em] text-inkg-soft transition-colors hover:text-bronze"
+                  className={`group relative whitespace-nowrap text-[0.8rem] uppercase tracking-[0.16em] transition-colors ${
+                    onDark
+                      ? "text-ivory-2/85 hover:text-copper-soft"
+                      : "text-inkg-soft hover:text-bronze"
+                  }`}
                 >
                   {item.label}
                   <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-antique transition-all duration-500 group-hover:w-full" />

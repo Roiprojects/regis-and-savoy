@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/AppLink";
+import { usePathname } from "next/navigation";
 import { brand, nav, services, contact } from "@/lib/content";
 import { ArrowIcon } from "@/components/ui";
 import { Reveal } from "@/components/motion/Reveal";
@@ -9,14 +10,22 @@ import Botanical from "@/components/Botanical";
 
 export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  // The Capital page runs a navy + beige + gold theme — carry it into the footer.
+  const pathname = usePathname();
+  const isCapital = pathname?.startsWith("/capital");
 
   return (
-    <footer className="relative overflow-hidden bg-forest text-ivory-2">
-      <Botanical
-        src="teal.png"
-        opacity={80}
-        className="right-[5vw] top-12 hidden w-14 md:block md:w-20"
-      />
+    <footer
+      className={`relative overflow-hidden text-ivory-2 ${isCapital ? "" : "bg-forest"}`}
+      style={isCapital ? { backgroundColor: "#14213d" } : undefined}
+    >
+      {!isCapital && (
+        <Botanical
+          src="teal.png"
+          opacity={80}
+          className="right-[5vw] top-12 hidden w-14 md:block md:w-20"
+        />
+      )}
       {/* Big quote band */}
       <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">
         <div className="mx-auto max-w-[1400px]">

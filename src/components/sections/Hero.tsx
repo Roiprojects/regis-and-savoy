@@ -15,12 +15,12 @@ export default function Hero() {
   return (
     <section
       data-bg="#e6d6c2"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-cover bg-center bg-no-repeat pb-12 pt-32"
-      style={{
-        backgroundColor: "#e6d6c2",
-        backgroundImage: "url('/images/terrarium-bg.png')",
-      }}
+      className="relative flex min-h-[100svh] flex-col overflow-hidden pb-12 pt-32"
+      style={{ backgroundColor: "#e6d6c2" }}
     >
+      {/* soft warm glow behind the terrarium — gentle depth, uniform cream tone */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_74%_38%,rgba(250,244,233,0.7),transparent_62%)]" />
+
       <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[1.1fr_0.9fr]">
         {/* Copy */}
         <div>

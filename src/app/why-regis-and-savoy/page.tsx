@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import Botanical from "@/components/Botanical";
 import { whyTerrarium } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -51,11 +52,12 @@ export default function WhyPage() {
       </section>
 
       {/* What sets us apart — elegant editorial list */}
-      <section className="bg-ivory py-28">
+      <section className="relative overflow-hidden bg-ivory py-28">
+        <Botanical src="green.png" className="right-[5vw] top-16 hidden w-12 sm:block md:w-16" />
         <div className="mx-auto max-w-[1080px] px-[var(--spacing-gutter)]">
           <Reveal>
-            <div className="mx-auto max-w-[40ch] text-center">
-              <p className="eyebrow text-copper">The Ecosystem</p>
+              <div className="mx-auto max-w-[40ch] text-center">
+                <p className="eyebrow text-copper">The Ecosystem</p>
               <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.9rem,3.6vw,2.9rem)] leading-tight text-inkg">
                 {whyTerrarium.setsApartTitle}
               </h2>

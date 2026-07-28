@@ -2,7 +2,7 @@
 // single colour via currentColor — use text-antique). viewBox 48.
 import type { ReactNode } from "react";
 
-function Base({ children }: { children: ReactNode }) {
+function Base({ children, className = "", ...props }: { children: ReactNode; className?: string } & React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -11,8 +11,9 @@ function Base({ children }: { children: ReactNode }) {
       strokeWidth={1.6}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-full w-full"
+      className={`h-full w-full ${className}`}
       aria-hidden
+      {...props}
     >
       {children}
     </svg>
@@ -91,6 +92,26 @@ export function IconBranch() {
     <Base>
       <path d="M24 42V10" />
       <path d="M24 20l8-7M24 26l-8-7M24 32l7-6" />
+    </Base>
+  );
+}
+
+// Lotus bloom — balanced ecosystem
+export function IconLotus({ className, ...props }: React.SVGAttributes<SVGSVGElement>) {
+  return (
+    <Base className={className} {...props} strokeWidth={1.4}>
+      {/* Left petals */}
+      <path d="M24 26c-6-5-13-3-15 2 0 7 4 11 15 17" />
+      <path d="M24 28c-4-4-9-2-10 2 0 4 3 7 10 12" />
+      {/* Right petals */}
+      <path d="M24 26c6-5 13-3 15 2 0 7-4 11-15 17" />
+      <path d="M24 28c4-4 9-2 10 2 0 4-3 7-10 12" />
+      {/* Inner petal details */}
+      <path d="M24 30c-2-2-5-1-6 1 0 2 2 4 6 7" />
+      <path d="M24 30c2-2 5-1 6 1 0 2-2 4-6 7" />
+      {/* Stem & leaf */}
+      <path d="M24 28v10" />
+      <path d="M24 34c-4 0-7-3-7-3" />
     </Base>
   );
 }
