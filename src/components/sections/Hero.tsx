@@ -21,7 +21,7 @@ export default function Hero() {
       {/* soft warm glow behind the terrarium — gentle depth, uniform cream tone */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_74%_38%,rgba(250,244,233,0.7),transparent_62%)]" />
 
-      <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-[var(--spacing-gutter)] lg:grid-cols-[0.95fr_1.05fr]">
         {/* Copy */}
         <div>
           <motion.div
@@ -36,7 +36,7 @@ export default function Hero() {
 
           <h1
             className="display-xl text-inkg font-serif"
-            style={{ fontSize: "clamp(2rem, 4.2vw, 3.7rem)", lineHeight: 1.1 }}
+            style={{ fontSize: "clamp(2rem, 3.7vw, 3.2rem)", lineHeight: 1.1 }}
           >
             <span className="block whitespace-nowrap">
               <RevealWords text={hero.headlineLine1} delay={0.15} />

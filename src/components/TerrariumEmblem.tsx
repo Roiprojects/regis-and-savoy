@@ -6,17 +6,20 @@ import { heroAnnotations } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-// All keywords listed beside the image (never over it).
 const KEYWORDS = [...heroAnnotations.left, ...heroAnnotations.right];
 
 const container = {
   rest: { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
   show: { transition: { staggerChildren: 0.09, delayChildren: 0.06 } },
 };
-const item = {
-  rest: { opacity: 0, x: -10 },
+const fromRight = {
+  rest: { opacity: 0, x: -18 },
   show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE } },
 };
+
+// Readable pill — same hover chip styling as before.
+const chip =
+  "whitespace-nowrap rounded-full bg-ivory-2/90 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-inkg shadow-[0_6px_18px_rgba(34,52,40,0.22)] ring-1 ring-copper/30 backdrop-blur-sm";
 
 export default function TerrariumEmblem({ href }: { href: string }) {
   return (
@@ -29,10 +32,10 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         initial="rest"
         animate="rest"
         whileHover="show"
-        className="mx-auto flex w-full max-w-[600px] items-center gap-5 sm:gap-8"
+        className="mx-auto flex w-full max-w-[680px] items-center justify-center gap-5 sm:gap-7"
       >
-        {/* Terrarium image */}
-        <div className="relative min-w-0 max-w-[420px] flex-1">
+        {/* Terrarium image — same size / drop-shadow / hover-scale as before */}
+        <div className="relative min-w-0 max-w-[500px] flex-1">
           <img
             src="/images/terrarium-element.png"
             alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
@@ -42,18 +45,16 @@ export default function TerrariumEmblem({ href }: { href: string }) {
           <span className="glass-sheen" />
         </div>
 
-        {/* Keyword rail — sits entirely outside the image, revealed on hover */}
-        <motion.ul variants={container} className="flex shrink-0 flex-col gap-3.5">
+        {/* Keyword chips — revealed one by one on hover, beside the image (no overlap) */}
+        <motion.ul variants={container} className="flex shrink-0 flex-col gap-3">
           {KEYWORDS.map((w) => (
             <motion.li
               key={w}
-              variants={item}
+              variants={fromRight}
               className="flex items-center gap-2 whitespace-nowrap"
             >
               <span className="h-px w-5 bg-copper" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg">
-                {w}
-              </span>
+              <span className={chip}>{w}</span>
             </motion.li>
           ))}
         </motion.ul>
