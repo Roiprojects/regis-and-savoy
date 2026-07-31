@@ -26,21 +26,23 @@ export default function Footer() {
           className="right-[5vw] top-12 hidden w-14 md:block md:w-20"
         />
       )}
-      {/* Big quote band */}
-      <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">
-        <div className="mx-auto max-w-[1400px]">
-          <Reveal>
-            <p className="max-w-4xl font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] text-ivory-2">
-              &ldquo;Every resilient business is built within a carefully
-              designed ecosystem of governance, compliance, structure and{" "}
-              <span className="italic text-copper-soft">strategic guidance.</span>&rdquo;
-            </p>
-            <p className="mt-8 text-sm uppercase tracking-[0.22em] text-ivory-2/45">
-              {brand.legalName}
-            </p>
-          </Reveal>
+      {/* Big quote band — hidden on the Capital page */}
+      {!isCapital && (
+        <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">
+          <div className="mx-auto max-w-[1400px]">
+            <Reveal>
+              <p className="max-w-4xl font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] text-ivory-2">
+                &ldquo;Every resilient business is built within a carefully
+                designed ecosystem of governance, compliance, structure and{" "}
+                <span className="italic text-copper-soft">strategic guidance.</span>&rdquo;
+              </p>
+              <p className="mt-8 text-sm uppercase tracking-[0.22em] text-ivory-2/45">
+                {brand.legalName}
+              </p>
+            </Reveal>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Columns */}
       <div className="mx-auto grid max-w-[1400px] gap-12 px-[var(--spacing-gutter)] py-20 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">

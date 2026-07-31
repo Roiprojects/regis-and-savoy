@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
@@ -21,6 +21,22 @@ const inter = Inter({
   display: "swap",
 });
 
+// Distinct typography for the Regis and Savoy Capital page.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const jost = Jost({
+  variable: "--font-jost",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Regis And Savoy Corporate Services LLP",
@@ -36,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${inter.variable} ${playfair.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink">
         <div className="grain" aria-hidden />

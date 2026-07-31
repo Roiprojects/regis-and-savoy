@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Link from "@/components/AppLink";
 import { Reveal, RevealWords, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
@@ -17,7 +18,17 @@ const GOLD = "#bf9b4e";
 
 export default function CapitalPage() {
   return (
-    <main style={{ backgroundColor: BEIGE }} className="text-[#14213d]">
+    <main
+      style={
+        {
+          backgroundColor: BEIGE,
+          // Distinct typography, scoped to this page only.
+          "--font-display": "var(--font-playfair), Georgia, serif",
+          "--font-sans": "var(--font-jost), system-ui, sans-serif",
+        } as CSSProperties
+      }
+      className="text-[#14213d]"
+    >
       {/* Hero — navy band sets the theme immediately */}
       <section
         style={{ backgroundColor: NAVY }}
@@ -71,10 +82,7 @@ export default function CapitalPage() {
           <Stagger className="grid gap-px overflow-hidden rounded-sm border border-[#d8bd7e]/20 bg-[#d8bd7e]/20 sm:grid-cols-2 lg:grid-cols-4">
             {capital.glance.map((g) => (
               <StaggerItem key={g}>
-                <div
-                  style={{ backgroundColor: NAVY }}
-                  className="flex h-full items-center p-8 text-lg font-[var(--font-display)] leading-snug text-[#f4ecdb]"
-                >
+                <div className="flex h-full items-center bg-[#14213d] p-8 text-lg font-[var(--font-display)] leading-snug text-[#f4ecdb] transition-colors duration-500 hover:bg-[#f4ecdb] hover:text-[#14213d]">
                   {g}
                 </div>
               </StaggerItem>

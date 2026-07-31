@@ -379,7 +379,7 @@ export const stewardship = about.paragraphs[1];
 export const nav = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Regis and Savoy Capital", href: "/capital" },
+  { label: "Capital", href: "/capital" },
   { label: "Contact Us", href: "/contact" },
 ];
 

@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
 import Botanical from "@/components/Botanical";
-import { whyTerrarium } from "@/lib/content";
+import { whyTerrarium, heroAnnotations } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Why Regis and Savoy — The Terrarium Framework",
   description:
     "The Terrarium Framework: an integrated approach to corporate advisory, balancing governance, legal, compliance, risk and strategy.",
 };
+
+// The disciplines balanced within the terrarium — shown beside the image.
+const KEYWORDS = [...heroAnnotations.left, ...heroAnnotations.right];
 
 export default function WhyPage() {
   return (
@@ -42,11 +45,27 @@ export default function WhyPage() {
           </div>
 
           <Reveal delay={0.15}>
-            <img
-              src="/images/terrarium-element.png"
-              alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
-              className="mx-auto w-[min(74vw,400px)] drop-shadow-[0_36px_60px_rgba(80,60,30,0.30)]"
-            />
+            <div className="mx-auto flex w-full max-w-[540px] items-center gap-5 sm:gap-7">
+              {/* Terrarium image */}
+              <div className="relative min-w-0 max-w-[360px] flex-1">
+                <img
+                  src="/images/terrarium-element.png"
+                  alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
+                  className="block w-full object-contain drop-shadow-[0_36px_60px_rgba(80,60,30,0.30)]"
+                />
+              </div>
+              {/* Keywords — always visible, beside the image */}
+              <ul className="flex shrink-0 flex-col gap-3.5">
+                {KEYWORDS.map((w) => (
+                  <li key={w} className="flex items-center gap-2 whitespace-nowrap">
+                    <span className="h-px w-5 bg-copper" />
+                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg">
+                      {w}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </div>
       </section>

@@ -3,7 +3,7 @@ import Link from "@/components/AppLink";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
-import ServicesShowcase from "@/components/ServicesShowcase";
+import ServicesSlider from "@/components/ServicesSlider";
 import { contact } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -22,9 +22,7 @@ export default function ServicesPage() {
         accent="teal.png"
       />
 
-      <section className="pb-10 pt-4">
-        <ServicesShowcase />
-      </section>
+      <ServicesSlider />
 
       {/* CTA */}
       <section className="py-28">
