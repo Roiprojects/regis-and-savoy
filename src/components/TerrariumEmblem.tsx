@@ -17,9 +17,9 @@ const fromRight = {
   show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE } },
 };
 
-// Readable pill — same hover chip styling as before.
+// Readable pill — same hover chip styling as before (slightly slimmer).
 const chip =
-  "whitespace-nowrap rounded-full bg-ivory-2/90 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-inkg shadow-[0_6px_18px_rgba(34,52,40,0.22)] ring-1 ring-copper/30 backdrop-blur-sm";
+  "whitespace-nowrap rounded-full bg-ivory-2/90 px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-inkg shadow-[0_6px_18px_rgba(34,52,40,0.22)] ring-1 ring-copper/30 backdrop-blur-sm";
 
 export default function TerrariumEmblem({ href }: { href: string }) {
   return (
@@ -32,10 +32,10 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         initial="rest"
         animate="rest"
         whileHover="show"
-        className="mx-auto flex w-full max-w-[680px] items-center justify-center gap-5 sm:gap-7"
+        className="mx-auto flex w-full max-w-[760px] items-center justify-center gap-4 sm:gap-5"
       >
         {/* Terrarium image — same size / drop-shadow / hover-scale as before */}
-        <div className="relative min-w-0 max-w-[500px] flex-1">
+        <div className="relative min-w-0 max-w-[540px] flex-1">
           <img
             src="/images/terrarium-element.png"
             alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
